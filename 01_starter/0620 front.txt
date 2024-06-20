@@ -13,6 +13,9 @@ Override the default branch name...
 
 extension에서 git graph 설치
 
++옆에 눌러서 select default profile들어간 뒤
+command 디폴트값으로 지정
+
 3번째에서(Source Control) 아무거나 입력하고 커밋
 Publish Branch생기면 클릭
 깃 사이트에서 오토라이즈
@@ -20,3 +23,6 @@ Publish Branch생기면 클릭
 깃허브 업로드
 add -> commit -> push ( 커밋 아래 화살표에서 commit&push 해도 됨 )
 * 커밋위에 Message 필수로 적어야함
+
+ctrl + shift + p -> git clone
+
