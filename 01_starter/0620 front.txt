@@ -19,3 +19,4 @@ Publish Branch생기면 클릭
 
 깃허브 업로드
 add -> commit -> push ( 커밋 아래 화살표에서 commit&push 해도 됨 )
+* 커밋위에 Message 필수로 적어야함
