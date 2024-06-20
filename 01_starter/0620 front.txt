@@ -12,3 +12,10 @@ Override the default branch name...
 파일 옆에 +만 누르면 하나만 올리기
 
 extension에서 git graph 설치
+
+3번째에서(Source Control) 아무거나 입력하고 커밋
+Publish Branch생기면 클릭
+깃 사이트에서 오토라이즈
+
+깃허브 업로드
+add -> commit -> push ( 커밋 아래 화살표에서 commit&push 해도 됨 )
