@@ -27,4 +27,4 @@ add -> commit -> push ( 커밋 아래 화살표에서 commit&push 해도 됨 )
 ctrl + shift + p -> git clone
 
 git 수정 test
-
+git 수정 test2
