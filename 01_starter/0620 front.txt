@@ -1,0 +1,14 @@
+windows용 깃허브 설치
+USE vscode as git default editor
+Override the default branch name...
+
+터미널창 열기 : ctrl + ~
+터미널창 cmd로 바꾸기
+
+깃 사이트 -> Documentation -> Book -> 1.6절 -> Your Identity에서 이름, 이메일 설정
+
+좌측 패널에서 3번째 누르고 이닛 해서 레포지토리 만들기
+모든 파일 올리기 git add
+파일 옆에 +만 누르면 하나만 올리기
+
+extension에서 git graph 설치
