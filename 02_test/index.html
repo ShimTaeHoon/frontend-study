@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- lang은 문서의 언어를 명시하는 속성으로 기본값 en을 ko로 바꿔주면 번역 알림이 안뜸 -->
+<html lang="ko">
+<head>
+  <!-- 문서의 정보는 <head> 태그 안에 작성 -->
+  <!-- 웹페이지의 보이지 않는 정보를 작성하는 범위(문서의 정보) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 문서의 제목을 정의(브라우저 탭에서 확인) -->
+  <title>TEST</title>
+
+  <!-- 외부 스타일 시트 -->
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- 내부 스타일 시트 -->
+  <style>
+    div{
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- 외부 스크립트 -->
+  <script src="./js/main.js"></script>
+
+  <!-- 내부 스크립트 -->
+  <script>
+    console.log('내부 스크립트');
+  </script>
+</head>
+<body>
+  <!-- 사용자 눈에 보이는 구조는 <body> 태그 안에 작성 -->
+  <!-- 로고, 헤더, 푸터, 내비게이션, 메뉴, 버튼, 이미지 등 -->
+  <div>Hello world!</div>
+
+  <!-- 화면에 이미지 출력하기 -->
+  <!-- alt(alternative의 약어)는 이미지가 출력되지 못하는 경우 대신 출력할 텍스트(대체텍스트)
+        이미지 경로가 잘못됐거나 네트워크가 불안정하거나 등 이미지 대신 화면에 나올 글자
+        + 웹 접근성과 관련 (스크린 리더가 alt 텍스트를 읽어줌) 
+   -->
+
+  <!-- 상대경로 -->
+  <img src="./images/logo.png" alt="로고"> 
+  <!-- 상대경로(./ 경로생략) -->
+  <img src="images/logo.png" alt="로고(./ 경로생략)">
+  <!-- 절대경로 -->
+  <img src="/02_test/images/logo.png" alt="로고2">
+  <!-- 절대경로(사이트 원격) -->
+  <img src="https://gongu.copyright.or.kr/gongu/wrt/cmmn/wrtFileImageView.do?wrtSn=9046601&filePath=L2Rpc2sxL25ld2RhdGEvMjAxNC8yMS9DTFM2L2FzYWRhbFBob3RvXzI0MTRfMjAxNDA0MTY=&thumbAt=Y&thumbSe=b_tbumb&wrtTy=10004" alt="구름">
+
+  <!-- css로 배경 이미지 넣기 -->
+  <!-- class라는 속성을 이름을 붙이는 것 div태그에 logo라는 이름을 붙인것 -->
+  <div class="logo"></div>
+
+  <!-- 페이지를 나누고 연결 하기(링크 걸기) -->
+  <!-- href: 다른 페이지로 이동할 수 있는 참조가 되는 경로를 입력하는 속성 -->
+  <a href="https://www.naver.com">네이버</a>
+  <a href="./about/about.html">About</a>
+</body>
+</html>
