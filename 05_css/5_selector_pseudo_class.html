@@ -77,16 +77,39 @@
       color: red;
     } */
 
+    /* even > 짝수를 의미 */
+    /* .fruits *:nth-child(even){
+      color:red;
+    } */
+
     /* 홀수번째만 선택 */
     /* .fruits *:nth-child(2n+1){
       color: red;
     } */
 
+    /* odd > 홀수를 의미 */
+    /* .fruits *:nth-child(odd){
+      color: red;
+    } */
+
     /* 2번째 자식부터 전부 다 선택 */
-   .fruits *:nth-child(n+2){
+   /* .fruits *:nth-child(n+2){
+    color: red;
+   } */
+  
+   /* Quiz: 자식들 중 앞에 3개만 선택 */
+   /* 3-n인데 n이 앞에 나와야해서 -n+3 */
+   /* 0 -> 3 */
+   /* 1 -> 2 */
+   /* .fruits *:nth-child(-n+3){ 
+    color: red;
+   } */
+
+   /* :not(s) (선택자 s를 제외) */
+   /* 쉼표로 구분해서 여러개 제외 시킬 수 있음 */
+   .fruits *:not(span, h3){
     color: red;
    }
-
   </style>
 </head>
 <body>
