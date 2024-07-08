@@ -11,27 +11,34 @@
       border: 2px solid red;
     }
 
-    nav >ul {
+    header nav ul.main-menu {
       color: red;
     }
 
+    #global_aside > a:nth-child(5) > img {
+      border: 2px solid blue;
+    }
+
+    #detail_list > .column-1 > .header {
+      border: 2px solid darkorange;
+    }
+
+    #detail_list > ul:nth-child(4) > li:nth-child(3){
+      border: 2px solid olive;
+    }
+
+    #detail_list > h3:last-child:hover {
+      border: 2px solid lightblue;
+    }
     
-    body >.header {
-
-    }
-
-    ul li:nth-child(3){
-
-    }
-
-    h3:hover {
-
-    }
-    
-    input[type="text"]:focus {
+    input[type="text"]:focus:not(input[readonly]){
       background-color: orange;
+      
+      /* focus시 outline이 생김 */
+      outline: none;
+      border: 2px solid red;
+    
     }
-
 
   </style>
 </head>
