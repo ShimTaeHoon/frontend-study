@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    
+    .main-background {
+      width: 100%;
+      height: 500px;
+      background-image: url(./images/shoes.jpg);
+      background-repeat:no-repeat; /*이미지 반복 안되게 하는 설정 */
+      background-position: center;
+      background-size: cover; /*이미지 가득 채우고 싶으면 cover 사용*/
+      text-align: center; /*글자 가운데 정렬 text-align: center;*/
+      padding-top: 50px; /*큰 세션은 padding을 사용하고, 요소들 사이의 간격은 margin을 사용 */
+
+      position: relative;
+    }
+    
+    .main-title{
+      color: #fff;
+      font-size: 40px;
+    }
+
+    .main-content {
+      color: #fff;
+    }
+
+    .main-button {
+      padding: 10px 30px;
+      font-size: 20px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer; /* 버튼 마우스 대면 바뀌는 모션주는 설정 (즉, 버튼 누르는지 확인할 수 있도록 사용하는 것)*/
+
+    }
+
+    .main-button:hover{
+      background-color: gray;
+    }
+
+    /* 겹치는 레이아웃 만들기 (2가지 방법) */
+
+    /*  화면이 작을때는 부모 width의 80%만, 넓어지면 최대 700px 까지 */
+    .sub-description {
+      width: 80%;
+      max-width: 700px;
+      padding: 10px;
+      border-radius: 20px; /*모서리 둥글게 하는 설정*/
+      background-color: white;
+
+      /*  1 방법 : relative 사용 시 */
+      /* position: relative;
+      top: 120px;
+      margin: 0 auto; */
+
+      /* 2 방법 : absolute 사용 시 */
+      position: absolute;
+      bottom: -100px;
+      /* absolute는 오토주고 싶은 방향 부분을 설정해서 0를 주는것이 공식  (margin: 0 auto;사용 안됨) */
+      left: 0;
+      right: 0;
+      margin: auto; /* = 네 방향 오토라는 의미*/
+     
+    }
+
+    .history {
+      background-color: #aeaeae;
+      padding: 100px;
+    }
+    .history > h4 {
+      text-align: center;
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="main-background">
+    <h4 class="main-title">Buy our excellent shoes! </h4>
+    <p class="main-content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptatem sapiente atque magni voluptatum veritatis, officiis corrupti itaque sequi nisi ducimus ipsa, deserunt ut doloremque possimus animi ratione. Doloremque, recusandae.
+    </p>
+    <button type="button" class="main-button">Buy Now</button>
+    
+    <div class="sub-description">
+      <h4>How we design our shoes</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br>
+        Perferendis mollitia voluptatum delectus dolorem.<br>
+        Adipisci ducimus itaque dolorem similique quae sint possimus!<br>
+      </p>
+    </div>
+  </div>
+
+  <div class="history">
+    <h4>Our best shoes & History</h4>
+    <ul>
+      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, minima non ut blanditiis, mollitia veniam excepturi quia corporis provident quibusdam fuga odit modi repellat voluptas saepe libero quam, praesentium nihil?</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum accusamus molestiae possimus distinctio cupiditate culpa, aut velit commodi et! Rerum est, ad repellendus vero distinctio ab modi dicta officia voluptates?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, molestias et soluta at atque officia perferendis voluptates ipsa, animi optio dolor ex aperiam asperiores quasi quis, iste velit. Omnis, veniam?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos ipsam facilis error dolorum quidem sunt exercitationem, iure atque quis reprehenderit sapiente esse similique tenetur a harum. Cumque, veritatis id!</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum qui nobis beatae fugiat quam dolorem blanditiis?</li>
+    </ul>
+  </div>
+</body>
+</html>
