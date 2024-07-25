@@ -1,0 +1,418 @@
+/* COMMON */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* 링크 클릭시 스크롤 스무스하게 이동 */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff8e8;
+  overflow-x: hidden;
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.inner {
+  /* 고정 길이=고정형 */
+  /* width: 1200px; */
+  /* 최대값만 제한=반응형 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* 바디부분에 요소 만들필요없이 */
+/* 해당 콘텐츠(title) 뒤에 추가하는 것 */
+/* 자주 쓰는 스타일은 공통 스타일로 만들어서 재사용 */
+.title:after {
+  content: ""; /* 필수 속성 */
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  margin: 24px auto 0;
+}
+
+/* 버튼 스타일 공통 , 쓰고싶은곳에 btn 넣기 */
+.btn {
+  width: 120px;
+  padding: 10px;
+  /* a랑 span은 inline이라 block으로 바꿔주기(해당 요소들을 버튼으로 사용할 수도 있기에 블록으로 지정 */
+  display: block;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  /* 호버 시간 */
+  transition: 0.5s;
+  
+}
+
+/* 버튼 사이 띄우기 위해 부모에 flex */
+.work .port .btn-group {
+  display: flex;
+  /* 컬럼 사이 띄우기 */
+  column-gap: 40px;
+}
+
+/* 버튼 호버 했을때 색깔 */
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+/* 버튼 개별스타일 */
+.btn--brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+/* 버튼 개별스타일 호버시 */
+.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+  /* 고정된 헤더 만들기 */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+header > .inner {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo img {
+  width: 40px;
+  /* 가로 너비만 지정하면 세로 높이는 비율에 맞춰 정해짐 */
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  padding: 10px 20px;
+  font-weight: 700;
+}
+header nav ul li a:hover {
+  color: orange;
+  /* text-shadow: 1px 1px 5px #333; */
+}
+
+/* VISUAL */
+.visual {
+  /* (중요)
+    헤더가 fixed 되어 일반 배치 흐름에서 벗어남
+    fixed 헤더 다음에 오는 섹션은 헤더의 높이만큼 외부 여백 추가 필요
+  */
+  margin-top: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+.visual video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ABOUT */
+.about {
+  /* (주의) 100%는 부모의 가로 길이(<body>)가 기준이 됨 */
+  /* margin-top: 100%; */
+  margin-top: 100vh;
+  padding-top: 200px;
+}
+.about .inner {
+  padding-bottom: 30px;
+  position: relative;
+}
+.about .about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.about .about__wrapper .about__img {
+  width: 40%;
+}
+.about .about__wrapper .about__img img {
+  width: 100%;
+  border-radius: 50%;
+}
+.about .about__wrapper .about__text {
+  width: 45%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about .about__wrapper .about__text .slogan {
+  /* 폰트 크기 700과 같은 의미 */
+  font-weight: bold;
+  
+  font-size: 35px;
+}
+
+.about .about__wrapper .about__text h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about .about__wrapper .about__text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about .about__wrapper .about__text li {
+  line-height: 1.8;
+}
+
+.about .about__btn {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+.about .about__btn img {
+  display: inline;
+  width: 28px;
+  margin-right: 10px;
+  /* vertical-align: middle 주면 baseline기준이 아니라 중앙성 기준으로 됨 */
+  vertical-align: middle;
+}
+
+/* SKILL */
+.skill {
+  /* 상단영역 패딩주기 */
+  padding-top: 200px;
+}
+
+.skill .skill__list {
+  /* 수직글자 수평으로 */
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+
+  /* 수평 정렬 */
+  justify-content: space-evenly;
+  /* 텍스트 가운데 정렬 */
+  text-align: center;
+}
+
+/* li자식 태그 명확히 선택 후 아래 글자 li와 수평을 맞추기 위해*/
+.skill .skill__list > li {
+ display: flex;
+ /* 상단에서 flex 사용함으로 인해 수평인 상태인데 flex를 다시 써서 */
+ /* 수직으로 바뀜 */
+
+ /* 수직을 다시 수평으로 바꿈 */
+ flex-direction: column;
+ /* 가운데 정렬 */
+ align-items: center;
+
+ /* 애니메이션 효과 추가 */
+  opacity: 0;
+  transition:1s;
+ /* 방법1: position */
+ /* 현재 내 위치 기준 relative */
+ /* position: relative;
+ top: 100px; */
+
+ /* 방법2: transform */
+ transform: translateY(100px);
+}
+
+.skill.show .skill__list > li {
+  opacity: 1;
+  /* 방법1: position */
+  /* top: 0; */
+  /* 방법2: transform */
+  transform: translateY(0);
+}
+
+  /* li들이 순차적으로 올라오도록.. */
+.skill .skill__list > li:nth-child(1){
+transition-delay: 0.2s;
+}
+.skill .skill__list > li:nth-child(2){
+transition-delay: 0.4s;
+}
+.skill .skill__list > li:nth-child(3){
+transition-delay: 0.6s;
+}
+.skill .skill__list > li:nth-child(4){
+transition-delay: 0.8s;
+}
+.skill .skill__list > li:nth-child(5){
+transition-delay: 1s;
+}
+
+/* div나 li가 많이있으면 > 자식선택자 태그로 명확하게 해야함 */
+.skill .skill__list li div {
+  width: 80px;
+  height: 50px;
+  background-color: #b9e3f9;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  transition: 1s;
+}
+
+.skill .skill__list li:hover div {
+  transform: rotate(0deg);
+}
+
+.skill .skill__list li div p {
+  font-size: 30px;
+  font-weight: bold;
+  /* 자간 */
+  letter-spacing: -2px;
+}
+
+.skill .skill__list li h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* WORK */
+.work {
+  /* SKILL과 WORK사이 간격 떨어트리기 위해 padding-top */
+  padding-top: 200px;
+}
+
+/* div 간격 띄우기 */
+.work .port {
+  display: flex;
+  margin: 20px 0;
+}
+
+.work .port {
+  /* port-img와 port-text가 수평으로 바뀜 */
+  display: flex;
+}
+
+  /* port-img와 port-text의 영역을 절반씩 나눠가지기 */
+.work .port .port__img,
+.work .port .port__text {
+  width: 50%;
+}
+
+  /* div가 작아지면 같이(이미지, 텍스트) 작아지게끔 */
+.work .port .port__img img {
+  width:100%;
+  height:100%;
+}
+
+.work .port .port__text {
+  font-size: 14px;
+  padding: 30px;
+  /* 상단에서 이미 flex가 적용되어 다시 한번 적용해주기 */
+  display: flex;
+  /* colum으로 다시 정렬 */
+  flex-direction: column;
+  /* 수직 정렬 간격 동일하게 띄우기 */
+  justify-content: space-evenly;
+}
+
+.work .port .port__text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.work .port .port__text li {
+  /* lineheight로 글자간격 조정 */
+  line-height: 1.8;
+}
+
+.work .port .port__text li span {
+  font-weight: 700;
+}
+
+/* MODAL */
+/* id를 줬기때문에 .(class)가 아니라 # */
+#modal {
+  /* 화면 전체 영역 덮기 */
+  position: fixed;
+  /* 뷰포트에 딱 붙이기 위해(안 붙여도 딱 붙지만 버그 생기는걸 예방하기 위해 0으로.. */
+  top: 0;
+  left: 0;
+  /* 가로 100% 세로 100% 꽉 채우기 */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+
+  /* 모달 이미지를 수직 가운데 정렬, 수평 가운데 정렬하기 */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+
+  /* 모달창을 숨기기 위해.. */
+  display: none;
+}
+
+#modal .modal__inner {
+  /* 뷰포트의 80% 기준, 페이지 마우스로 축소 확대 시 모달창이 80%으로 .. */
+  width: 80%;
+  position: relative;
+}
+
+#modal .modal__inner img {
+  /* 모달이너 이미지가 작아서 영역안에 꽉 차게끔 */
+  width: 100%; 
+}
+
+#modal .modal__inner .btn-close {
+  /* 아이콘 크기 키우기 */
+  font-size: 40px;
+
+  color: #fff;
+  background-color: #eaeaea;
+  border-radius: 50%;
+  cursor: pointer;
+  /* absolute 부모 기준으로 . . */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#modal .modal__inner .btn-close:hover {
+  background-color: #333;
+}
+
