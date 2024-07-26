@@ -68,7 +68,7 @@
 
   <!-- VISUAL -->
   <!-- 배경 비디오 적용(또는 슬라이드로 만들고 싶으면 swiper 참고) -->
-  <section class="visual">
+  <section id="cover" class="visual">
     <video autoplay muted loop>
       <source src="videos/movie2.mp4" type="video/mp4">
     </video>
@@ -77,7 +77,7 @@
   <!-- ABOUT -->
   <section id="about" class="about">
     <div class="inner">
-      <h2 class="title font-en">ABOUT</h2>
+      <h2 class="title font-en">ABOUT ME</h2>
       <div class="about__wrapper">
         <div class="about__img">
           <!-- 본인 프로필 이미지로 변경 -->
@@ -87,15 +87,32 @@
           <!-- 본인 슬로건, 이름(생년월), 교육 사항 등 작성 -->
           <!-- 스트롱 태그는 스크린리더 사용 시 강조해서 읽어주는 것 -->
           <!-- 눈으로 보기에는 BOLD가 들어간다 뿐 -->
-          <strong class="slogan font-en">Simple is Best</strong>
-          <h3 class="font-en">Shim tae hoon</h3>
-          <div>
+         
+          <!-- <strong class="slogan font-en">Simple is Best</strong> -->
+          <h3 class="font-en">이름</h3>
+          <h2 class="font-en">Shim tae hoon</h2>
+          <h3 class="font-en">생년월일</h2>
+          <h2 class="font-en">1992.12.27</h2>
+          <h3 class="font-en">주소</h3>
+          <h2 class="font-en">부평구 산청로60 롯데캐슬</h2>
+          <!-- <div>
             <h4 class="font-en">EDUCATION</h4>
             <ul>
               <li>11.03 ~ 17.02 목원대학교 서비스경영학부 졸업</li>
               <li>24.06 ~ 24.12 풀스택 개발자 과정 수료</li>
             </ul>
-          </div>
+          </div> -->
+        </div>
+        <div class="about__text">
+          <!-- 본인 슬로건, 이름(생년월), 교육 사항 등 작성 -->
+          <!-- 스트롱 태그는 스크린리더 사용 시 강조해서 읽어주는 것 -->
+          <!-- 눈으로 보기에는 BOLD가 들어간다 뿐 -->
+          <h3 class="font-en">연락처</h2>
+          <h2 class="font-en">010-2522-2721</h2>
+          <h3 class="font-en">이메일</h2>
+          <h2 class="font-en">sth7187@naver.com</h2>
+          <h3 class="font-en">학력</h2>
+          <h2 class="font-en">목원대학교(서비스경영학부)</h2>
         </div>
       </div>
 
@@ -227,12 +244,57 @@
   </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="contact font-en scroll-spy">
+    <div class="inner">
+      <h2 class="title">CONTACT</h2>
+      <div class="contact__info">
+        <ul>
+          <li><a href="https://github.com/ShimTaeHoon">github.com/ShimTaeHoon</a></li>
+          <li>010-1234-5678</li>
+          <li>sth7187@naver.com</li>
+        </ul>
+      </div>
+      <div class="contact__sns">
+        <ul>
+          <li>
+            <a href="인스타그램 주소" target="_blank">
+              <img src="images/icon/icon_insta.png" alt="인스타그램">
+            </a>
+          </li>
+          <li>
+            <a href="유튜브 주소" target="_blank">
+              <img src="images/icon/icon_youtube.png" alt="유튜브">
+            </a>
+          </li>
+        </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="copyright">
+        <!-- 카피라이트 특수문자 -->
+        &copy; <span class="this-year"></span>
+        심태훈. <span>All Rights Reserved.</span>
+      </p>
+    </div>
+  </footer>
+
   <!-- MODAL -->
   <div id="modal">
     <div class="modal__inner">
       <img src="images/work_4.jpg" alt="샘플">
       <span class="material-symbols-outlined btn-close">close</span>
     </div>
+  </div>
+  <!-- SCROLL TO TOP -->
+  <div id="to-top">
+    <a href="#">
+      <!-- 메테리얼 심볼 사진 불러오기 -->
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
   </div>
 </body>
 </html>

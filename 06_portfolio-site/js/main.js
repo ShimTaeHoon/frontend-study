@@ -40,3 +40,49 @@ closeBtn.addEventListener('click', function () {
   
 });
 
+// 현재 연도 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+console.log(new Date().getFullYear());// 현재 연도 정보가 숫자 데이터로 반환됨
+
+let thisYear = document.querySelector('.this-year');
+// 텍스트만 넣을 수 있는것 textContent // 태그까지 넣는건 따로 있음
+thisYear.textContent = new Date().getFullYear();
+
+// 페이지 최상단으로 이동
+// 쿼리셀렉터 아이디 선택자로 to-top 가져오기..
+let toTopBtn = document.querySelector('#to-top');
+
+// 페이지에 스크롤 이벤트 감지를 추가
+// window: 브라우저 창 객체
+// 아래 scroll은 실제 윈도우 창의 스크롤 이벤트 감지
+window.addEventListener('scroll', function(){
+  console.log(window.scrollY); // y축 스크롤 위치를 콘솔에 찍어주기
+
+  // 페이지 스크롤 위치가 
+  // 500px을 넘으면 요소를 보이고,
+  // 500px을 넘지 않으면 요소 숨기기!
+  // scrollY가 숫자라 숫자랑 비교해야함(조건문 쓸때)
+  if (window.scrollY > 500) {
+    // 요소 보이기
+
+    // style속성으로 조작하기
+    // 자바스크립트는 '',"" 둘다 허용 됨 (문자열 쓸 때)
+    // toTopBtn.style.display = 'flex'
+
+    // 애니메이션 처리를 하고 싶다면
+    toTopBtn.style.opacity = 1;
+    // 버튼 보일때 원래 위치로
+    toTopBtn.style.transform = 'translateX(0)';
+
+  } else {
+    // 요소 숨기기
+    // display는 애니메이션 처리 안됨
+    // toTopBtn.style.display = 'none'
+
+    // 애니메이션 처리를 하고 싶다면
+    toTopBtn.style.opacity = 0;
+    // 버튼 opacity 0 될때 바깥쪽으로 사라지기 위해 100px
+    toTopBtn.style.transform = 'translateX(100px)';
+  }
+});
+

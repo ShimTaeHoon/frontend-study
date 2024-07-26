@@ -156,7 +156,9 @@ header nav ul li a:hover {
   /* (주의) 100%는 부모의 가로 길이(<body>)가 기준이 됨 */
   /* margin-top: 100%; */
   margin-top: 100vh;
-  padding-top: 200px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color:white
 }
 .about .inner {
   padding-bottom: 30px;
@@ -164,21 +166,23 @@ header nav ul li a:hover {
 }
 .about .about__wrapper {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 }
 .about .about__wrapper .about__img {
-  width: 40%;
+  width: 50%;
 }
 .about .about__wrapper .about__img img {
   width: 100%;
   border-radius: 50%;
 }
 .about .about__wrapper .about__text {
-  width: 45%;
-  padding: 30px;
+  width: 40%;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .about .about__wrapper .about__text .slogan {
@@ -189,8 +193,14 @@ header nav ul li a:hover {
 }
 
 .about .about__wrapper .about__text h3 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 900;
+  color: #444343;
+}
+
+.about .about__wrapper .about__text .address {
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .about .about__wrapper .about__text h4 {
@@ -206,7 +216,8 @@ header nav ul li a:hover {
 .about .about__btn {
   position: absolute;
   bottom: 0;
-  right: 30px;
+  /* right: 20px; */
+  right: 0;
 }
 
 .about .about__btn img {
@@ -220,7 +231,10 @@ header nav ul li a:hover {
 /* SKILL */
 .skill {
   /* 상단영역 패딩주기 */
-  padding-top: 200px;
+  background-color: #F9C51D;
+  padding-top: 120px;
+  padding-bottom: 120px;
+
 }
 
 .skill .skill__list {
@@ -313,7 +327,8 @@ transition-delay: 1s;
 /* WORK */
 .work {
   /* SKILL과 WORK사이 간격 떨어트리기 위해 padding-top */
-  padding-top: 200px;
+  /* padding-top: 200px; */
+  padding-top: 150px;
 }
 
 /* div 간격 띄우기 */
@@ -362,6 +377,80 @@ transition-delay: 1s;
 
 .work .port .port__text li span {
   font-weight: 700;
+}
+
+/* CONTACT */
+.contact {
+  padding: 200px 0;
+}
+
+/* li안에 있는 글자요소들만 가운데 정렬 */
+.contact .contact__info li {
+  line-height: 2;
+  text-align: center;
+
+  /* 애니메이션 효과 추가 */
+  opacity: 0;
+  transition: 1s;
+}
+
+/* 애니메이션 효과 추가 */
+.contact .contact__info li:nth-child(1),
+.contact .contact__info li:nth-child(3) {
+  /* 오른쪽에서 왼쪽으로 나타나는 */
+  transform: translateX(150px);
+}
+
+.contact .contact__info li:nth-child(2) {
+  transform: translateX(-150px);
+}
+
+.contact.show .contact__info li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact .contact__sns {
+  margin-top: 20px;
+}
+
+.contact .contact__sns ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+/* 애니메이션 효과 추가 */
+.contact .contact__sns ul li {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+
+/* contact.show는 자식요소가 아니라 붙여서 써야함 */
+/* show 클래스는 js에 있음 */
+.contact.show .contact__sns ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact.show .contact__sns ul li:nth-child(1){
+  transition-delay: 0.2s;
+}
+
+.contact.show .contact__sns ul li:nth-child(2){
+  transition-delay: 0.4s;
+}
+
+.contact .contact__sns ul li img {
+  width: 50px;
+}
+
+/* FOOTER */
+footer .copyright {
+  text-align: center;
+  font-weight: 600;
+  line-height: 200px;
 }
 
 /* MODAL */
@@ -415,4 +504,30 @@ transition-delay: 1s;
 #modal .modal__inner .btn-close:hover {
   background-color: #333;
 }
+
+/* SCROLL TO TOP */
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #fff8e8;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  /* 버튼이 깔리지 않게 z-index : 9 정도 */
+  z-index: 9;
+  /* js에 버튼 opacity 트랜지션 주기 */
+  transition: 0.5s;
+
+  /* 웹사이트 처음 접속 했을때 버튼이 보이면 안되기에 */
+  /* 처음 상태는 투명에 x축으로 +100px 지점 */
+  opacity: 0;
+  transform: translateX(100px);
+}
+
 
