@@ -48,6 +48,77 @@ img {
   margin-bottom: 50px;
 }
 
+h1 span {
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce .3s ease infinite alternate;
+  font-family: 'Titan One', cursive;
+  font-size: 80px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CCC,
+               0 2px 0 #CCC,
+               0 3px 0 #CCC,
+               0 4px 0 #CCC,
+               0 5px 0 #CCC,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .4);
+}
+
+h1 span:nth-child(2) { animation-delay: .1s; }
+h1 span:nth-child(3) { animation-delay: .2s; }
+h1 span:nth-child(4) { animation-delay: .3s; }
+h1 span:nth-child(5) { animation-delay: .4s; }
+h1 span:nth-child(6) { animation-delay: .5s; }
+h1 span:nth-child(7) { animation-delay: .6s; }
+h1 span:nth-child(8) { animation-delay: .7s; }
+/* h1 span { animation-iteration-count : 50; } */
+
+@keyframes bounce {
+  100% {
+    top: -40px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}
+
+.sth_color {
+  color: #F9C51D;
+  animation: fadein 3.5s ease-out;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+.title2 {
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title3 {
+  font-size: 150px;
+  font-weight: 800;
+  text-align: center;
+}
+
 /* 바디부분에 요소 만들필요없이 */
 /* 해당 콘텐츠(title) 뒤에 추가하는 것 */
 /* 자주 쓰는 스타일은 공통 스타일로 만들어서 재사용 */
@@ -57,6 +128,15 @@ img {
   width: 80px;
   height: 2px;
   background-color: #333;
+  margin: 24px auto 0;
+}
+
+.title2:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #fff8e8;
   margin: 24px auto 0;
 }
 
@@ -144,11 +224,23 @@ header nav ul li a:hover {
   left: 0;
   width: 100%;
   height: calc(100% - 60px);
+  background-color: #333;
+  color: #fff8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .visual video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.visual .visual__wrapper .visual__text h2 {
+  font-size: 45px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
 }
 
 /* ABOUT */
@@ -176,12 +268,17 @@ header nav ul li a:hover {
   width: 100%;
   border-radius: 50%;
 }
+
+.about .about__wrapper .about__img:hover {
+  scale: 1.2;
+}
+
 .about .about__wrapper .about__text {
-  width: 40%;
-  padding: 50px;
+  width: 70%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -193,9 +290,9 @@ header nav ul li a:hover {
 }
 
 .about .about__wrapper .about__text h3 {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 900;
-  color: #444343;
+  color: #333;
 }
 
 .about .about__wrapper .about__text .address {
@@ -213,9 +310,47 @@ header nav ul li a:hover {
   line-height: 1.8;
 }
 
+.about.show .about__text .text__tran {
+  position: relative;
+  opacity: 0;
+  animation: leftslide 0.2s;
+  animation-delay: 0.2s;
+  animation-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+@keyframes leftslide {
+  from {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0);
+    opacity :1;  
+  }
+}
+
+.about.show .about__text .text__tran2 {
+  position: relative;
+  animation: rightslide 0.2s;
+  animation-delay: 0.2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rightslide {
+  from {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+    opacity :1;  
+  }
+}
+
 .about .about__btn {
   position: absolute;
-  bottom: 0;
+  bottom:-70px;
   /* right: 20px; */
   right: 0;
 }
@@ -223,15 +358,18 @@ header nav ul li a:hover {
 .about .about__btn img {
   display: inline;
   width: 28px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   /* vertical-align: middle 주면 baseline기준이 아니라 중앙성 기준으로 됨 */
   vertical-align: middle;
 }
+
+
 
 /* SKILL */
 .skill {
   /* 상단영역 패딩주기 */
   background-color: #F9C51D;
+  color: #fff8e8;
   padding-top: 120px;
   padding-bottom: 120px;
 
@@ -381,7 +519,11 @@ transition-delay: 1s;
 
 /* CONTACT */
 .contact {
+  padding-top: 120px;
+  padding-bottom: 120px;
   padding: 200px 0;
+  background-color: #007aff;
+  color: #fff8e8;
 }
 
 /* li안에 있는 글자요소들만 가운데 정렬 */

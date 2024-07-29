@@ -69,32 +69,47 @@
   <!-- VISUAL -->
   <!-- 배경 비디오 적용(또는 슬라이드로 만들고 싶으면 swiper 참고) -->
   <section id="cover" class="visual">
-    <video autoplay muted loop>
+    <!-- <video autoplay muted loop>
       <source src="videos/movie2.mp4" type="video/mp4">
-    </video>
+    </video> -->
+      <div class="inner">
+          <div class="visual__wrapper">
+            <div class="visual__text">
+              <h1>
+                <span class="title3 font-en">안</span>
+                <span class="title3 font-en">녕</span>
+                <span class="title3 font-en">하</span>
+                <span class="title3 font-en">세</span>
+                <span class="title3 font-en">요</span>
+              </h1>
+              <h2>
+                <span>개발자 꿈나무 <span class="sth_color">{ 심태훈 }</span> 입니다;</span>
+              </h2>
+            </div>
+          </div>
+      </div>
+      
+      
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="about">
+  <section id="about" class="about scroll-spy">
     <div class="inner">
       <h2 class="title font-en">ABOUT ME</h2>
       <div class="about__wrapper">
-        <div class="about__img">
-          <!-- 본인 프로필 이미지로 변경 -->
-          <img src="images/profile.jpg" alt="프로필">
-        </div>
+        
         <div class="about__text">
           <!-- 본인 슬로건, 이름(생년월), 교육 사항 등 작성 -->
           <!-- 스트롱 태그는 스크린리더 사용 시 강조해서 읽어주는 것 -->
           <!-- 눈으로 보기에는 BOLD가 들어간다 뿐 -->
          
           <!-- <strong class="slogan font-en">Simple is Best</strong> -->
-          <h3 class="font-en">이름</h3>
-          <h2 class="font-en">Shim tae hoon</h2>
-          <h3 class="font-en">생년월일</h2>
-          <h2 class="font-en">1992.12.27</h2>
-          <h3 class="font-en">주소</h3>
-          <h2 class="font-en">부평구 산청로60 롯데캐슬</h2>
+          <h3 class="font-en text__tran">이름</h3>
+          <h2 class="font-en text__tran">Shim tae hoon</h2>
+          <h3 class="font-en text__tran">생년월일</h2>
+          <h2 class="font-en text__tran">1992.12.27</h2>
+          <h3 class="font-en text__tran">주소</h3>
+          <h2 class="font-en text__tran">인천광역시 부평구</h2>
           <!-- <div>
             <h4 class="font-en">EDUCATION</h4>
             <ul>
@@ -103,16 +118,20 @@
             </ul>
           </div> -->
         </div>
+        <div class="about__img">
+          <!-- 본인 프로필 이미지로 변경 -->
+          <img src="images/profile.jpg" alt="프로필">
+        </div>
         <div class="about__text">
           <!-- 본인 슬로건, 이름(생년월), 교육 사항 등 작성 -->
           <!-- 스트롱 태그는 스크린리더 사용 시 강조해서 읽어주는 것 -->
           <!-- 눈으로 보기에는 BOLD가 들어간다 뿐 -->
-          <h3 class="font-en">연락처</h2>
-          <h2 class="font-en">010-2522-2721</h2>
-          <h3 class="font-en">이메일</h2>
-          <h2 class="font-en">sth7187@naver.com</h2>
-          <h3 class="font-en">학력</h2>
-          <h2 class="font-en">목원대학교(서비스경영학부)</h2>
+          <h3 class="font-en text__tran2">연락처</h2>
+          <h2 class="font-en text__tran2">010-2522-2721</h2>
+          <h3 class="font-en text__tran2">이메일</h2>
+          <h2 class="font-en text__tran2">sth7187@naver.com</h2>
+          <h3 class="font-en text__tran2">학력</h2>
+          <h2 class="font-en text__tran2">목원대학교 졸업</h2>
         </div>
       </div>
 
@@ -128,7 +147,7 @@
   <!-- SKILL -->
   <section id="skill" class="skill scroll-spy">
     <div class="inner">
-      <h2 class="title font-en">SKILL</h2>
+      <h2 class="title2 font-en">SKILL</h2>
       <ul class="skill__list">
         <!-- 스킬 추가하려면 li 요소 복사 붙여넣기 -->
         <li>
@@ -247,7 +266,7 @@
   <!-- CONTACT -->
   <section id="contact" class="contact font-en scroll-spy">
     <div class="inner">
-      <h2 class="title">CONTACT</h2>
+      <h2 class="title2">CONTACT</h2>
       <div class="contact__info">
         <ul>
           <li><a href="https://github.com/ShimTaeHoon">github.com/ShimTaeHoon</a></li>
