@@ -86,3 +86,35 @@ window.addEventListener('scroll', function(){
   }
 });
 
+
+// 모바일용 메뉴
+let btnHamburger = document.querySelector('.btn-hamburger');
+let navEl = document.querySelector('header nav');
+// 데이터가 하나가아니라 querySelector가 아닌 All로 가져오기
+// let은 값을 바꿀수 있는 변수 const(constant)는 (자바의 final 상수)
+let menuItems = document.querySelectorAll('header nav ul li a');
+console.log(menuItems);
+
+btnHamburger.addEventListener('click', function() {
+  // JS로 클래스를 제어하는 메소드
+  // add()/remove()/toggle()/contains()
+  
+  // if (navEl.classList.contains('active')) {
+  //   navEl.classList.remove('active');
+  // } else {
+  //   navEl.classList.add('active');
+  // }
+
+  // 위의 코드와 같은 기능
+  navEl.classList.toggle('active');
+  
+});
+
+  // forEach반복문으로 a태그5개에다가 이벤트 리스너...
+  // 클릭할때마다 active가사라짐
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener('click', function (){
+    navEl.classList.remove('active');
+  });
+});
+

@@ -299,6 +299,17 @@ header nav ul li a:hover {
   /* text-shadow: 1px 1px 5px #333; */
 }
 
+header .btn-hamburger {
+  /* 모바일에서만 햄버거 버튼이 나오도록 display: none해줌 */
+  display: none;
+}
+
+header .btn-hamburger .material-symbols-outlined {
+  color: #333;
+  font-size: 40px;
+  line-height: normal;
+}
+
 /* VISUAL */
 .visual {
   /* (중요)
@@ -352,10 +363,23 @@ header nav ul li a:hover {
   position: relative;
 }
 .about .about__wrapper {
+  /* 수평이었던게 수직으로 (모바일로 볼때) */
+  /* flex-direction: column; */
+
   display: flex;
   /* justify-content: space-between; */
   justify-content: center;
 }
+
+.about .about__wrapper .about__img {
+  width: 100%;
+}
+
+.about .about__wrapper .about__text {
+  width: 100%;
+  text-align: center;
+}
+
 .about .about__wrapper .about__img {
   width: 50%;
   transition: 1s;
@@ -550,6 +574,11 @@ header nav ul li a:hover {
   justify-content: space-evenly;
   /* 텍스트 가운데 정렬 */
   text-align: center;
+
+  /* 모바일에서 글자가 수직으로 떨어질때 */
+  flex-wrap: wrap;
+  /* 글자 사이 간격.. */
+  gap: 30px;
   
 }
 
@@ -684,20 +713,31 @@ transition-delay: 1s;
 .work .port {
   /* port-img와 port-text가 수평으로 바뀜 */
   /* display: flex; */
+  
+  flex-direction: column;
+  margin:40px 0;
 }
 
   /* port-img와 port-text의 영역을 절반씩 나눠가지기 */
 .work .port .port__img,
 .work .port .port__text {
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 
+.work .port .port__text {
+  padding: 20px 0 0;
+}
+
 .work .port .port__text h3 {
   text-align: center;
+}
+
+.work .port .btn-group {
+  margin-top: 20px;
 }
 
   /* div가 작아지면 같이(이미지, 텍스트) 작아지게끔 */
@@ -945,4 +985,82 @@ footer .copyright {
   /* 처음 상태는 투명에 x축으로 +100px 지점 */
   opacity: 0;
   transform: translateX(100px);
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  /* 모바일에서는 화면의 80%만 차지하도록 */
+  .inner {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .title:after {
+    width: 60px;
+  }
+
+  header .btn-hamburger {
+    display: block;
+  }
+
+  header nav {
+    /* nav 디자인 및 배치 */
+    background-color: #fff8e8;
+    color: #333;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    /* display: none; */
+    height: 0;
+    transition: 0.3s;
+    
+    /* 자식들이 부모의 영역을 침범할때 숨기기 */
+    overflow: hidden;
+  }
+
+  header nav.active {
+    display: block;
+    height: 100%;
+  }
+
+  header nav ul {
+    /* ul 태그를 원래 보여짐 특성인 블록으로 원복 */
+    display: block;
+    padding-top: 60px;
+  }
+
+  header nav ul li {
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+
+  header nav ul li a {
+    transition: 0.5s;
+  }
+
+  header nav ul li a:hover {
+    letter-spacing: 20px;
+  }
+
+  .about {
+    padding-top: 100px;
+  }
+
+  .skill {
+    padding-top: 100px;
+  }
+
+  .work {
+    padding-top: 100px;
+  }
+
+  .contact {
+    padding: 100px 0;
+  }
+
 }
